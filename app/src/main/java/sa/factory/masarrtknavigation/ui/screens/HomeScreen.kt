@@ -27,6 +27,7 @@ fun HomeScreen(
     onItemClick: (MasarRtkItem) -> Unit
 ) {
     val categories = listOf("الكل", "الخدمات الرئيسية", "المراقبة الحية", "التقارير الضريبية", "الإعدادات")
+    val defaultPeripheral = "GPS RTK High-Precision Receiver + Gyroscope"
 
     Column(
         modifier = Modifier
@@ -36,8 +37,8 @@ fun HomeScreen(
     ) {
         // Header
         Column {
-            Text("تطبيق مسار الفضائي — توجيه تصوير فيديو للمحتوى —", fontSize = 22.sp, fontWeight = FontWeight.Black, color = BrandTextPrimary)
-            Text("منظومة navigation المتكاملة مع ربط GPS RTK High-Precision Receiver + Gyroscope", fontSize = 12.sp, color = BrandTextSecondary)
+            Text("منظومة مسار الملاحية - الملاحة الفضائية عالية الدقة RTK", fontSize = 22.sp, fontWeight = FontWeight.Black, color = BrandTextPrimary)
+            Text("منظومة إدارة الأساطيل والتوجيه الميداني المتكاملة بدقة السنتيمتر عبر GPS RTK", fontSize = 12.sp, color = BrandTextSecondary)
         }
 
         // Hardware Status Capsule
@@ -52,7 +53,7 @@ fun HomeScreen(
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Column(modifier = Modifier.weight(1f)) {
-                    Text("العتاد الحي: ${state.telemetry?.peripheralName ?: 'GPS RTK High-Precision Receiver + Gyroscope'}", fontWeight = FontWeight.Bold, color = BrandPrimary, fontSize = 13.sp)
+                    Text("العتاد الحي: ${state.telemetry?.peripheralName ?: defaultPeripheral}", fontWeight = FontWeight.Bold, color = BrandPrimary, fontSize = 13.sp)
                     Text(state.telemetry?.liveReading ?: "GPS RTK High-Precision Receiver + Gyroscope: ONLINE | READY", fontSize = 11.sp, color = BrandTextSecondary)
                 }
                 Badge(containerColor = BrandPrimary) {

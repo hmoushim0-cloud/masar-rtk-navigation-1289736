@@ -50,7 +50,7 @@ class RtkCarrierPhaseProtocolEngine {
 
     fun parseGgaSentence(nmeaSentence: String): GnssPositionFix? {
         // Example: $GNGGA,120530.00,2442.8160,N,04640.5180,E,4,28,0.72,612.4,M,-21.2,M,1.2,0042*48
-        if (!nmeaSentence.startsWith("$GNGGA") && !nmeaSentence.startsWith("$GPGGA")) {
+        if (!nmeaSentence.startsWith("\$GNGGA") && !nmeaSentence.startsWith("\$GPGGA")) {
             return null
         }
         val parts = nmeaSentence.split(",")

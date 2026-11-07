@@ -48,7 +48,7 @@ class MasarRtkRegressionTest {
     @Test
     fun testGgaSentenceParsingAndFixQuality() {
         val engine = RtkCarrierPhaseProtocolEngine()
-        val gga = "$GNGGA,120530.00,2442.8160,N,04640.5180,E,4,28,0.72,612.4,M,-21.2,M,1.2,0042*48"
+        val gga = "\$GNGGA,120530.00,2442.8160,N,04640.5180,E,4,28,0.72,612.4,M,-21.2,M,1.2,0042*48"
         val fix = engine.parseGgaSentence(gga)
 
         assertNotNull(fix)
